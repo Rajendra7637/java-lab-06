@@ -1,0 +1,3 @@
+public class EmployeeMain { public static void main(String[] args) { Employee e=new Employee(40000); HRManager h=new HRManager(65000); e.work(); System.out.println("Salary: "+e.getSalary()); h.work(); System.out.println("Salary: "+h.getSalary()); h.addEmployee("Neha Sharma"); } }
+class Employee { private double salary; Employee(double salary){this.salary=salary;} void work(){System.out.println("Employee is working.");} double getSalary(){return salary;} }
+class HRManager extends Employee { HRManager(double salary){super(salary);} @Override void work(){System.out.println("HR Manager is managing human resources.");} void addEmployee(String name){System.out.println("Added employee: "+name);} }

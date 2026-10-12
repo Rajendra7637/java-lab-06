@@ -1,0 +1,3 @@
+import java.util.Scanner;
+public class AverageMain { public static void main(String[] args) { new AverageCalculator().readNumbersAndCalculate(); } }
+class AverageCalculator { private double[] numbers=new double[10]; void readNumbersAndCalculate(){ Scanner sc=new Scanner(System.in); double total=0; System.out.println("Enter 10 numbers:"); for(int i=0;i<numbers.length;i++){System.out.print("Number "+(i+1)+": "); numbers[i]=sc.nextDouble(); total+=numbers[i];} double average=total/numbers.length; int count=0; for(int i=0;i<numbers.length;i++) if(numbers[i]>average)count++; System.out.println("Average: "+average); System.out.println("Numbers above average: "+count); sc.close(); } }

@@ -1,0 +1,4 @@
+public class AbstractEmployeeMain { public static void main(String[] args) { Employee m=new Manager("Karan",60000,12000), p=new Programmer("Isha",50000,8000); m.displayInfo(); System.out.println("Salary: Rs. "+m.calculateSalary()); p.displayInfo(); System.out.println("Salary: Rs. "+p.calculateSalary()); } }
+abstract class Employee { abstract double calculateSalary(); abstract void displayInfo(); }
+class Manager extends Employee { private String name; private double basic,allowance; Manager(String n,double b,double a){name=n;basic=b;allowance=a;} double calculateSalary(){return basic+allowance;} void displayInfo(){System.out.println("Role: Manager, Name: "+name);} }
+class Programmer extends Employee { private String name; private double basic,bonus; Programmer(String n,double b,double bonus){name=n;basic=b;this.bonus=bonus;} double calculateSalary(){return basic+bonus;} void displayInfo(){System.out.println("Role: Programmer, Name: "+name);} }

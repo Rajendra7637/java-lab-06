@@ -1,0 +1,4 @@
+public class AbstractShapeMain { public static void main(String[] args) { Shape c=new Circle(5); Shape t=new Triangle(3,4,5); System.out.printf("Circle area: %.2f, perimeter: %.2f%n",c.calculateArea(),c.calculatePerimeter()); System.out.printf("Triangle area: %.2f, perimeter: %.2f%n",t.calculateArea(),t.calculatePerimeter()); } }
+abstract class Shape { abstract double calculateArea(); abstract double calculatePerimeter(); }
+class Circle extends Shape { private double radius; Circle(double radius){this.radius=radius;} double calculateArea(){return Math.PI*radius*radius;} double calculatePerimeter(){return 2*Math.PI*radius;} }
+class Triangle extends Shape { private double a,b,c; Triangle(double a,double b,double c){this.a=a;this.b=b;this.c=c;} double calculateArea(){double s=(a+b+c)/2; return Math.sqrt(Math.max(0,s*(s-a)*(s-b)*(s-c)));} double calculatePerimeter(){return a+b+c;} }
